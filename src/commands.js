@@ -5,6 +5,8 @@ let Gif = require("./commands/gif/gif");
 let ThanksYou = require("./commands/thanksYou");
 let Love = require("./commands/love");
 let Answer = require("./commands/answer");
+let SaveLink = require("./commands/saveLink");
+
 
 class Commands {
   constructor() {
@@ -24,6 +26,7 @@ class Commands {
       new ThanksYou("thanksYou",":D"),
       new Love("love","posibilidades de amor pibe 7w7 upf!love"),
       new Answer("answer", "te respondo si o no a tu duda :D"),
+      new SaveLink("saveLink", "guarda links y mira el listado (EN PROCESO PLS NO LA USEN)")
     ];
   }
 
@@ -33,7 +36,7 @@ class Commands {
     }
   }
 
-  findCommand(message){
+  findCommand(message, client){
     let posibleCommand = message.content.slice(4).match(/\w+/);
     let commandFind = false;
       for(let i = 0; i < this.command.list.length; i++){
@@ -60,6 +63,8 @@ class Commands {
           this.command.list[5].on(message);
         } else if (commandFind == this.command.list[6].name) {
           this.command.list[6].on(message);
+        } else if (commandFind == this.command.list[7].name) {
+          this.command.list[7].on(message, client);
         } 
 
       } else {

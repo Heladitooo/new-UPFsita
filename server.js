@@ -20,29 +20,18 @@ const commads = new Commads();
 const express = require('express');
 const server = express();
 
+require("dotenv").config();
 
  
-server.get('/', (req, res) => {
+server.all('/', (req, res) => {
     res.send('El bot sigue encendido.');
 });
  
-server.get('/badWords', (req, res) => {
-   fs.readFile("./src/badWords/badWords.txt",(err,data)=>{
-    if(err){
-      console.log("O NO!: " + err)
-    }else {
-      res.send(data.toString())
-    }
-   })
-    
-});
- 
 
-
-client.on("ready", () => {
+ client.on("ready", () => {
     console.log("Hello word!");
     commads.init();
-
+  
     client.user.setPresence({
         status: "online",
         activity: {
@@ -52,9 +41,16 @@ client.on("ready", () => {
     });
 });
 
+module.exports = () => {
+    server.listen(3000, () => {
+        console.log('Servidor Listo.');
+    });
+    return true;
+}
+
 client.on("message", (message) => {
-    if (commads.particion(message)) {
-      commads.findCommand(message);
+    if (commads.particion(message, client)) {
+      commads.findCommand(message, client);
     }
 
     badWords.findWord(message,(data) => {
@@ -62,12 +58,12 @@ client.on("message", (message) => {
             message.author.send("https://pbs.twimg.com/media/EZiN_NbX0AANLZG.jpg \n");
             message.author.send("escribiste: " + message.content +". **usa buen vocabulario 7-7, tu mensaje fue borrado.**");
 
-            fs.appendFile("./src/badWords/badWords.txt", message.author.username + "   " + message.content + " " + new Date() + "\n", 
+            fs.appendFile("./src/badWords/badWords.txt", `${message.author.username}: ${message.content}   ${message.channel.name}  ${new Date()} \n\n` , 
                 function (err) {
                     if (err) {
                         return console.log(err);
                     }
-                    console.log(message.author.username + " " + message.content + " " + new Date());
+                    console.log("\n\n" + message.author.username + " " + message.content + " " + new Date());
                 })
 
             message.delete();
@@ -79,9 +75,4 @@ client.on("message", (message) => {
 
 client.login(process.env.TOKEN);
 
-module.exports = () => {
-    server.listen(3000, () => {
-        console.log('Servidor Listo.');
-    });
-    return true;
-}
+

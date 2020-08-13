@@ -1,5 +1,6 @@
 const Command = require("./command");
 
+
 class Say extends Command {
     constructor(name,description){
         super(name,description);
