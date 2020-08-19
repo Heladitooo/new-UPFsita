@@ -13,7 +13,7 @@ class ThanksYou extends Command {
       .setColor(chooseColor())
       .setTitle("Thanks You")
       .setImage("https://img-9gag-fun.9cache.com/photo/aDzoVPG_460s.jpg")
-      embed.setDescription("@andf, @iceWolf, @pajaro, @BratianCero, @Guevardox, @Molonazo")
+      embed.setDescription("@iceWolf, @andf, @pajaro, @BratianCero, @Guevardox, @Molonazo")
 
     message.channel.send(embed);
   }

@@ -2,10 +2,14 @@ class BadWords {
   constructor() {
     this.counterWords = 0;
     this.words = [
+      "krajo",
       "mierda",
       "estupido",
       "carajo",
       "pichurria",
+      "Putö",
+      "Subnormal",
+      "Putò",
       "pendejo",
       "بزرگترین توهین",
       "estupido",
@@ -14,6 +18,7 @@ class BadWords {
       "perra",
       "recontrachanfles",
       "zorra",
+      "fuck",
       "retrasado",
       "golazoooo",
       "marica",

@@ -176,6 +176,7 @@ function randomGif(categorie, user, user2){
 
       ],
       dance: [
+        "https://media.discordapp.net/attachments/731513614556463216/743896180869693560/20200219_132511-1.gif",
         "https://media.discordapp.net/attachments/301161155831922688/733111096004575292/Fernan_capo.gif",
         "https://media1.tenor.com/images/fbf9160aaf0140037000f926737f4746/tenor.gif",
         "https://media1.tenor.com/images/8df28ac0b72e04b6f464759d909a160f/tenor.gif",
@@ -197,12 +198,63 @@ function randomGif(categorie, user, user2){
         "https://media1.tenor.com/images/751469ca5bf52e595b14910532a171fa/tenor.gif",
         "https://media1.tenor.com/images/aa9374ef547c871d4626a22d24042d1f/tenor.gif",
         "https://media1.tenor.com/images/c516ca70e76578431857f15f880a93f2/tenor.gif",
+        "https://media1.tenor.com/images/318d7ff6007aa26367803b878b02fe72/tenor.gif",
+      ],
+      confused: [
+        "https://media1.tenor.com/images/beccde9fb999e4a6b705aacaf3bc1e06/tenor.gif",
+        "https://media1.tenor.com/images/7fc975e4dfc5cda5070d5c4e566a02b7/tenor.gif",
+        "https://media1.tenor.com/images/614bceea7d8e2b435831531681a00532/tenor.gif",
+        "https://media1.tenor.com/images/2e9b1c1a508cb7d5b7e6cd0600e1c1c2/tenor.gif",
+        "https://media1.tenor.com/images/a24836c199e89429c9d1f114a75038f6/tenor.gif",
+        "https://media1.tenor.com/images/43b50092db1bf508fb4f0942e6a578fd/tenor.gif",
+        "https://media1.tenor.com/images/b4e998013ffce08bd0416d499dfbd6be/tenor.gif",
+        "https://media1.tenor.com/images/676287309b99573cbbcaaf633cd9e1c8/tenor.gif",
+        "https://media1.tenor.com/images/88d015a1213cd2f65a469db5ca0c51e7/tenor.gif",
+        "https://media1.tenor.com/images/c28cf58b51b74120d2f79f729be6b5de/tenor.gif",
+        "https://media1.tenor.com/images/f8fbf06cb95f2a7506a62ced77fcde6d/tenor.gif",
+        "https://media1.tenor.com/images/ea8a415b5533d169f336859c148cca71/tenor.gif",
+        "https://cdn.discordapp.com/attachments/740614037896822856/740621520359129100/emoji.png",
+        "https://media1.tenor.com/images/44ea63f3daee92d4c0e1da6c3f3b669c/tenor.gif",
+        "https://media1.tenor.com/images/76fa4a1d1f70abb7c91dc9c9d6460ccd/tenor.gif",
+        "https://media1.tenor.com/images/5e5507a6ec490f07864b86aff7e32852/tenor.gif",
+        "https://media1.tenor.com/images/4370d233d5a77bc6054ce55c2bd125d7/tenor.gif",
+        "https://media1.tenor.com/images/e7e5aa12a2531e892d59461e0385ef1c/tenor.gif",
+        "https://media1.tenor.com/images/89d55748e5ae70caa2828b3768112c09/tenor.gif",
+      ],
+      revive: [
+        "https://media1.tenor.com/images/7ac20cf58ef7f43cc855a41819c5d138/tenor.gif",
+        "https://media1.tenor.com/images/754b3b0cb68ef4b720dadff60d92f734/tenor.gif",
+        "https://media1.tenor.com/images/ab516571b3c7b9a0e48c5a222a2cd9bf/tenor.gif",
+        "https://media1.tenor.com/images/b661ff095140dd81325f5725e56b0be6/tenor.gif",
+        "https://media1.tenor.com/images/c954b90f9077fd9cfbafc507e002a50a/tenor.gif",
+        "https://media1.tenor.com/images/1abd93c20da996b1155490953fc301ae/tenor.gif",
+        "https://media1.tenor.com/images/3fe463c978a07ca731d68c4f76b84d9b/tenor.gif",
+        "https://cdn.discordapp.com/attachments/738822151406092378/739290328334336030/pollo_brutal.gif",
+        "https://cdn.discordapp.com/attachments/738822151406092378/739290638910226432/yeahn.gif",
+      ],
+      cry: [
+        "https://media1.tenor.com/images/0436bfc9861b4b57ffffda82d3adad6e/tenor.gif",
+        "https://media1.tenor.com/images/fa8eb7bdb9b673134bc016bcb14a9552/tenor.gif",
+        "https://media1.tenor.com/images/5f1c93699e3d7e430674beda00bad1f5/tenor.gif",
+        "https://media1.tenor.com/images/54d4a336509c43ec467ff3af5794ffb7/tenor.gif",
+        "https://media1.tenor.com/images/b88fa314f0f172832a5f41fce111f359/tenor.gif",
+        "https://media1.tenor.com/images/bdd8e3865332d5ccf2edddd1460e0792/tenor.gif",
+        "https://media1.tenor.com/images/b2a8adc0b925cfdddc40c4c38d1b5167/tenor.gif",
+        "https://media1.tenor.com/images/28853bf5c67abc04b317ad9c62981697/tenor.gif",
+        "https://media1.tenor.com/images/bc6517ddc10fc60c4dc73c9e3a00eafa/tenor.gif",
+        "https://media1.tenor.com/images/846ac6000caf9db3e0b1045e3892e3df/tenor.gif",
+        "https://media1.tenor.com/images/98466bf4ae57b70548f19863ca7ea2b4/tenor.gif",
+        "https://media1.tenor.com/images/52c215455de18a40570ac94bbfd08963/tenor.gif",
+        "https://media1.tenor.com/images/6088fab756706a4bf141e28fe330a2be/tenor.gif",
+        "https://media1.tenor.com/images/96934d3e1c66062214ba16b220d3e811/tenor.gif",
+        "https://media1.tenor.com/images/738829fcb07c26490e4e76d3833644be/tenor.gif",
+        "https://media.tenor.com/images/7cba9943d6449423bd9da78929bf6337/tenor.gif",
       ]
     };
 
     if(categorie == "kiss"){
         return {
-          gif: gifList.kiss[random(0, 10)],
+          gif: gifList.kiss[random(0, gifList.kiss.length-1)],
           works: user + " beso a " + user2 + "  OWO",
           doesWork: {
             showGif: true,
@@ -213,7 +265,7 @@ function randomGif(categorie, user, user2){
 
     if (categorie == "happy") {
         return {
-          gif: gifList.happy[random(0, 21)],
+          gif: gifList.happy[random(0, gifList.happy.length-1)],
           works: user + " esta feliz por " + user2 + "  nwn",
           doesWork: {
             showGif: true,
@@ -224,7 +276,7 @@ function randomGif(categorie, user, user2){
 
     if (categorie == "kill") {
       return {
-        gif: gifList.kill[random(0, 11)],
+        gif: gifList.kill[random(0, gifList.kill.length-1)],
         works: user + " mato a " + user2 + "  xd",
         doesWork: {
           showGif: false,
@@ -235,7 +287,7 @@ function randomGif(categorie, user, user2){
 
     if (categorie == "hug") {
       return {
-        gif: gifList.hug[random(0, 37)],
+        gif: gifList.hug[random(0, gifList.hug.length-1)],
         works: user + " le da un abrazo a " + user2 + "  UwU",
         doesWork: {
           showGif: true,
@@ -246,7 +298,7 @@ function randomGif(categorie, user, user2){
 
     if (categorie == "sleep") {
       return {
-        gif: gifList.sleep[random(0, 11)],
+        gif: gifList.sleep[random(0, gifList.sleep.length-1)],
         works: user + " se duerme pensando en " + user2,
         doesWork: {
           showGif: true,
@@ -257,7 +309,7 @@ function randomGif(categorie, user, user2){
 
     if (categorie == "hi") {
       return {
-        gif: gifList.hi[random(0,12)],
+        gif: gifList.hi[random(0,gifList.hi.length-1)],
         works: user + " saluda a " + user2,
         doesWork: {
           showGif: true,
@@ -268,7 +320,7 @@ function randomGif(categorie, user, user2){
 
     if (categorie == "angry") {
       return {
-        gif: gifList.angry[random(0, 13)],
+        gif: gifList.angry[random(0, gifList.angry.length-1)],
         works: user + " se enoja con " + user2 + ">:c",
         doesWork: {
           showGif: true,
@@ -279,7 +331,7 @@ function randomGif(categorie, user, user2){
 
   if (categorie == "sad") {
     return {
-      gif: gifList.sad[random(0, 7)],
+      gif: gifList.sad[random(0, gifList.sad.length-1)],
       works: user + " entristece por " + user2 + " unu",
       doesWork: {
         showGif: true,
@@ -290,7 +342,7 @@ function randomGif(categorie, user, user2){
     
   if (categorie == "bye") {
     return {
-      gif: gifList.bye[random(0, 11)],
+      gif: gifList.bye[random(0, gifList.bye.length-1)],
       works: user + " se despide de " + user2,
       doesWork: {
         showGif: true,
@@ -301,11 +353,44 @@ function randomGif(categorie, user, user2){
 
   if (categorie == "dance") {
     return {
-      gif: gifList.dance[random(0, 20)],
+      gif: gifList.dance[random(0, gifList.dance.length-1)],
       works: user + " baila con " + user2 + " [MUSICA]",
       doesWork: {
         showGif: true,
         alone: user + " baila :D" + " [MUSICA]",
+      },
+    };
+  }
+
+  if (categorie == "confused") {
+    return {
+      gif: gifList.confused[random(0, gifList.confused.length-1)],
+      works: user + " no entiende a " + user2 + " ¿-?",
+      doesWork: {
+        showGif: true,
+        alone: user + " esta confundido",
+      },
+    };
+  }
+
+  if (categorie == "revive") {
+    return {
+      gif: gifList.revive[random(0, gifList.revive.length-1)],
+      works: user + " revivio a " + user2 + " :o",
+      doesWork: {
+        showGif: false,
+        alone: user + " intento revivir a la nada",
+      },
+    };
+  }
+
+  if (categorie == "cry") {
+    return {
+      gif: gifList.cry[random(0, gifList.cry.length-1)],
+      works: user + " llora por " + user2 + " QnQ",
+      doesWork: {
+        showGif: true,
+        alone: user + " llora QnQ",
       },
     };
   }

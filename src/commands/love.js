@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const chooseColor = require("../chooseColor");
 const randomNumber = require("../random");
 const name = "UPFsita";
+const gmu = require("../getMentionsUsers");
 
 
 class Love extends Command {
@@ -64,30 +65,13 @@ class Love extends Command {
   on(message) {
     let user = message.author.username; 
     
-    let mentionUsers = [];
+    let mentionUsers = gmu(message);
     
-    let xuser;
+    let xuser = mentionUsers[0].username;
 
-    let xuser2;
+    let xuser2 = mentionUsers[1].username;
     
-    message.mentions.users.map((data) => {
-      mentionUsers.push(data);
-    })
-
-    
-    try {
-      xuser = mentionUsers[0].username;
-    } catch {
-      xuser = false;
-    }
-
-    try {
-      xuser2 = mentionUsers[1].username;
-    } catch {
-      xuser2 = false;
-    }
-    
-    if (xuser == false || xuser == user){
+    if (xuser == undefined || xuser == user){
       if (xuser == message.author.username) {
        
         const embed = new Discord.MessageEmbed()
@@ -108,7 +92,7 @@ class Love extends Command {
         message.channel.send(embed);
       }
   }else {
-      if(xuser2 == false){
+      if(xuser2 == undefined){
         this.calculateLove(message, user, xuser);
       } else {
         this.calculateLove(message, xuser, xuser2);

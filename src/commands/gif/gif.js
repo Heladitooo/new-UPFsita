@@ -2,7 +2,8 @@ const Command = require("../command");
 const randomGif = require("./randomGif");
 const Discord = require("discord.js");
 const chooseColor = require("../../chooseColor");
-const name = "UPFsita"
+const name = "UPFsita";
+const gmu = require("../../getMentionsUsers");
 
 class Gif extends Command {
   constructor(name, description) {
@@ -11,18 +12,16 @@ class Gif extends Command {
   }
 
   on(message, command){
-    let xuser;
+    let mentionUsers = gmu(message);
+
+    let xuser = mentionUsers[0];
     let embed;
-    try {
-      xuser = message.mentions.users.first().username;
-    } catch {
-      xuser = false;
-    }
-    
-    let gifSelected = randomGif(command, message.author.username, xuser);
+  
+   
 
 
-    if ((xuser == false || xuser == message.author.username ||xuser == name)) {
+    if ((xuser == undefined || xuser == message.author.username ||xuser == name)) {
+       let gifSelected = randomGif(command, message.author.username);
       embed = new Discord.MessageEmbed()
         .setColor(chooseColor())
         .setTitle(gifSelected.doesWork.alone);
@@ -34,6 +33,7 @@ class Gif extends Command {
 
       message.channel.send(embed);
     } else {
+       let gifSelected = randomGif(command, message.author.username, xuser.username);
       embed = new Discord.MessageEmbed()
         .setColor(chooseColor())
         .setTitle(gifSelected.works)

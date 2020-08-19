@@ -7,7 +7,7 @@ class Answer extends Command {
     }
 
     on(message) {
-        let random = randomNumber(0,4);
+        let random = randomNumber(0,5);
 
         if (message.content.slice(11).length > 0){
             if (random == 0) {
@@ -22,9 +22,13 @@ class Answer extends Command {
             else if (random == 3) {
                 message.channel.send("SI.");
             }
-            else if (random == 2) {
+            else if (random == 4) {
                 message.channel.send("si pero no.");
             }
+             else if (random == 5) {
+                message.channel.send("es muy obvio que no.");
+            }
+            
         } else {
             message.channel.send("no te puedo responder a nada w-w.")
         }
