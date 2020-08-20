@@ -1,10 +1,12 @@
-class welcome {
+class Welcome {
   constructor(){
-
+    
   }
 
-  newUser(message){
-
+  newUser(member){
+    const channel = member.guild.channels.cache.find(ch => ch.id == "")
   }
 }
+
+module.exports = Welcome;
 

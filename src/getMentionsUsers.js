@@ -1,12 +1,12 @@
-function getMentionUsers(message){
-    mentionUsers = []
+function getMentionUsers(message) {
+  mentionUsers = [];
   try {
     message.mentions.users.map((data) => {
       mentionUsers.push(data);
-    })
+    });
 
     return mentionUsers;
-  } catch(error){
+  } catch (error) {
     console.log(error);
   }
 }

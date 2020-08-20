@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 class BadWords {
   constructor() {
     this.counterWords = 0;
@@ -60,16 +62,52 @@ class BadWords {
     ];
   }
 
-  findWord(message, cb) {
-    for (let i = 0; i < this.words.length; i++) {
-      if (message.content.toLowerCase().includes(this.words[i])) {
-        cb(true);
-        break;
+  findWord(message) {
+    let data = false;
+    let regexMessage = message.content.match(/\w+/g);
+    if (regexMessage != undefined) {
+      for (let i = 0; i < regexMessage.length; i++) {
+        for (let j = 0; j < this.words.length; j++) {
+          if (regexMessage[i].toLowerCase() == this.words[j]) {
+            data = true;
+            break;
+          }
+        }
+      }
+
+      if (data && message.author != "736342162886623313") {
+        message.author.send(
+          "https://pbs.twimg.com/media/EZiN_NbX0AANLZG.jpg \n"
+        );
+        message.author.send(
+          "escribiste: " +
+            message.content +
+            ". **usa buen vocabulario 7-7, tu mensaje fue borrado.**"
+        );
+
+        fs.appendFile(
+          "./src/badWords/badWords.txt",
+          `${message.author.username}: ${message.content}   ${
+            message.channel.name
+          }  ${new Date()} \n\n`,
+          function (err) {
+            if (err) {
+              return console.log(err);
+            }
+            console.log(
+              "\n\n" +
+                message.author.username +
+                " " +
+                message.content +
+                " " +
+                new Date()
+            );
+          }
+        );
+
+        message.delete();
       }
     }
-    this.words.map((data) => {
-      return data;
-    });
   }
 }
 

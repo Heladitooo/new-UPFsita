@@ -12,11 +12,10 @@ class Pmessage extends Command {
     let userMention = gmu(message);
     let xuser = userMention[0];
 
-    if(xuser == undefined){
+    if (xuser == undefined) {
       message.author.send("Menciona a quien vas a enviar el mensaje ;-;");
       message.delete();
     } else {
-
       let md = message.content.match(/\/.+/g);
 
       try {
@@ -25,26 +24,26 @@ class Pmessage extends Command {
         md = false;
       }
 
-      if(md == false){
+      if (md == false) {
         message.author.send("divide el mensaje upf!pmessage @mention /message");
-        message.delete()
-
+        message.delete();
       } else {
         try {
-          client.users.cache.get(xuser.id).send("**:detective: mensaje anónimo:** " + md[0].slice(1));
-          message.author.send("mensaje enviado exitosamente a " + xuser.username + ":detective:");
+          client.users.cache
+            .get(xuser.id)
+            .send("**:detective: mensaje anónimo:** " + md[0].slice(1));
+          message.author.send(
+            "mensaje enviado exitosamente a " + xuser.username + ":detective:"
+          );
           message.delete();
         } catch {
           message.delete();
-          message.author.send("a ocurrido un error, asegurate de solo mencionar personas")
+          message.author.send(
+            "a ocurrido un error, asegurate de solo mencionar personas"
+          );
         }
-        
-        
       }
-
-      
     }
-    
   }
 }
 
