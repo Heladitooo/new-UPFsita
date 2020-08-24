@@ -1,4 +1,5 @@
 const Command = require("./command");
+require("dotenv").config();
 
 class Say extends Command {
   constructor(name, description) {
@@ -10,7 +11,7 @@ class Say extends Command {
 
     if (
       messageToPrint.length > 0 &&
-      message.author.id != "736342162886623313"
+      message.author.id != process.env.ID
     ) {
       message.channel.send(messageToPrint);
       message.delete();

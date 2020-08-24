@@ -149,7 +149,7 @@ class SaveLink extends Command {
           message.channel.send("no eres admi 7-7.");
         }
       } else if (message.content.slice(13, 19) == "delete") {
-        if (message.channel.id == channelID) {
+        if (message.channel.id == this.channelID) {
           if (message.member.roles.cache.some((r) => r.id === this.admiID)) {
             this.delete(message, message.content.slice(20));
           } else {

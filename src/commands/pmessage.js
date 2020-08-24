@@ -1,11 +1,11 @@
 const Command = require("./command");
 const Discord = require("discord.js");
-const chooseColor = require("../chooseColor");
 const gmu = require("../getMentionsUsers");
 
 class Pmessage extends Command {
   constructor(name, description) {
     super(name, description);
+    this.channelID = "746449632196034762";
   }
 
   on(message, client) {
@@ -29,13 +29,18 @@ class Pmessage extends Command {
         message.delete();
       } else {
         try {
-          client.users.cache
-            .get(xuser.id)
-            .send("**:detective: mensaje anónimo:** " + md[0].slice(1));
-          message.author.send(
-            "mensaje enviado exitosamente a " + xuser.username + ":detective:"
-          );
-          message.delete();
+          if(message.channel.id == this.channelID){
+            client.users.cache
+              .get(xuser.id)
+              .send("**:detective: mensaje anónimo:** " + md[0].slice(1));
+            message.author.send(
+              "mensaje enviado exitosamente a " + xuser.username + ":detective:"
+            );
+            message.delete();
+          } else {
+            message.author.send("este comando solo funciona en el canal #epic-anonymous-message");
+            message.delete();
+          }
         } catch {
           message.delete();
           message.author.send(

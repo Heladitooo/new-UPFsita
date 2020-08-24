@@ -8,6 +8,7 @@ let Answer = require("./commands/answer");
 let SaveLink = require("./commands/saveLink");
 let Pmessage = require("./commands/pmessage");
 let Rmeme = require("./commands/rmeme");
+let Status = require("./commands/status");
 
 class Commands {
   constructor() {
@@ -41,6 +42,7 @@ class Commands {
         "envia un mensaje privado o-o upf!pmessage @mention /mensaje"
       ),
       new Rmeme("rmeme", "responde con una imagen :D upf!rmeme mensaje"),
+      new Status("status", "como es mi estado")
     ];
   }
 
@@ -82,7 +84,10 @@ class Commands {
         this.command.list[8].on(message, client);
       } else if (commandFind == this.command.list[9].name) {
         this.command.list[9].on(message, client);
+      } else if (commandFind == this.command.list[10].name) {
+        this.command.list[10].on(message, client);
       }
+
     } else {
       if (
         posibleCommand == "happy" ||

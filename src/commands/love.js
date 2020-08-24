@@ -2,8 +2,9 @@ const Command = require("./command");
 const Discord = require("discord.js");
 const chooseColor = require("../chooseColor");
 const randomNumber = require("../random");
-const name = "UPFsita";
 const gmu = require("../getMentionsUsers");
+
+require("dotenv").config();
 
 class Love extends Command {
   constructor(name, description) {
@@ -130,7 +131,7 @@ class Love extends Command {
     let xuser2 = mentionUsers[1];
 
     if (xuser == undefined || xuser.username == user) {
-      if (xuser.username == message.author.username) {
+      if (xuser != undefined) {
         const embed = new Discord.MessageEmbed()
           .setColor(chooseColor())
           .setTitle("la expectativa de amor de " + user + " es de 100% ")

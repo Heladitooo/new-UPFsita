@@ -1,3 +1,11 @@
+//upf-warning
+//upf-sorry
+//upf userList
+
+require("dotenv").config();
+
+const git = require("git-rev-sync");
+
 const Discord = require("discord.js");
 const client = new Discord.Client(); //Nuevo cliente de discord
 
@@ -11,13 +19,13 @@ const Welcome = require("./src/welcome");
 const welcome = new Welcome();
 
 client.on("ready", () => {
-  console.log("Hello word!");
+  console.log("Hello word! " + git.tag());
   commads.init();
 
   client.user.setPresence({
     status: "online",
     activity: {
-      name: "upf!help :3   v1.5.8",
+      name: `upf!help nwn   ${git.tag()}`,
       type: "PLAYING",
     },
   });
@@ -29,10 +37,11 @@ client.on("message", (message) => {
   }
 
   badWords.findWord(message);
+  console.log();
 });
 
-//client.on("guildMemberAdd", (member) => {//
-//  welcome.newUser(member);
-//})
+client.on("guildMemberAdd", (member) => {
+  welcome.newUser(member);
+});
 
-client.login("");
+client.login(process.env.TOKEN);

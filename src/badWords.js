@@ -95,12 +95,9 @@ class BadWords {
               return console.log(err);
             }
             console.log(
-              "\n\n" +
-                message.author.username +
-                " " +
-                message.content +
-                " " +
-                new Date()
+              `${message.author.username}: ${message.content}   ${
+                message.channel.name
+              }  ${new Date()} \n\n`
             );
           }
         );

@@ -2,8 +2,9 @@ const Command = require("../command");
 const randomGif = require("./randomGif");
 const Discord = require("discord.js");
 const chooseColor = require("../../chooseColor");
-const name = "UPFsita";
 const gmu = require("../../getMentionsUsers");
+
+require("dotenv").config();
 
 class Gif extends Command {
   constructor(name, description) {
@@ -18,8 +19,8 @@ class Gif extends Command {
 
     if (
       xuser == undefined ||
-      xuser == message.author.username ||
-      xuser == name
+      xuser.username == message.author.username ||
+      xuser.id == process.env.ID
     ) {
       let gifSelected = randomGif(command, message.author.username);
       embed = new Discord.MessageEmbed()
