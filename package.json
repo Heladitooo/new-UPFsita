@@ -1,6 +1,6 @@
 {
-  "name": "UPFsita",
-  "version": "1.3.0",
+  "name": "upfsita",
+  "version": "1.6.0",
   "description": "",
   "main": "index.js",
   "scripts": {

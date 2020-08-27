@@ -32,12 +32,13 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-  if (commads.particion(message, client)) {
-    commads.findCommand(message, client);
-  }
+  let verification = badWords.findWord(message);
 
-  badWords.findWord(message);
-  console.log();
+  if (verification != true) {
+    if (commads.particion(message, client)) {
+      commads.findCommand(message, client);
+    }
+  }
 });
 
 client.on("guildMemberAdd", (member) => {

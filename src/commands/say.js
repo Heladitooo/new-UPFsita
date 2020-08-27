@@ -1,3 +1,5 @@
+//0
+
 const Command = require("./command");
 require("dotenv").config();
 
@@ -6,8 +8,8 @@ class Say extends Command {
     super(name, description);
   }
 
-  on(message) {
-    let messageToPrint = message.content.slice(8);
+  on(message, string) {
+    let messageToPrint = string;
 
     if (
       messageToPrint.length > 0 &&

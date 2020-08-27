@@ -1,3 +1,5 @@
+//5
+
 const Command = require("./command");
 const Discord = require("discord.js");
 const chooseColor = require("../chooseColor");

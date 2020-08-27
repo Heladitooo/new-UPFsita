@@ -1,3 +1,5 @@
+//8
+
 const Command = require("./command");
 const fs = require("fs");
 const randomNumber = require("../random");
@@ -118,11 +120,11 @@ class SaveLink extends Command {
     }
   }
 
-  on(message, client) {
+  on(message, string, client) {
     this.read();
     const self = this;
     let random = randomNumber(0, self.list.length - 1);
-
+  
     let link = message.content.match(
       /(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/g
     );
@@ -136,7 +138,7 @@ class SaveLink extends Command {
     if (link == false) {
       this.read();
 
-      if (message.content.slice(13) == "update") {
+      if (string.slice(0, 6) == "update") {
         if (message.member.roles.cache.some((r) => r.id === this.admiID)) {
           this.read();
 
@@ -148,7 +150,7 @@ class SaveLink extends Command {
         } else {
           message.channel.send("no eres admi 7-7.");
         }
-      } else if (message.content.slice(13, 19) == "delete") {
+      } else if (string.slice(0, 6) == "delete") {
         if (message.channel.id == this.channelID) {
           if (message.member.roles.cache.some((r) => r.id === this.admiID)) {
             this.delete(message, message.content.slice(20));
@@ -158,7 +160,7 @@ class SaveLink extends Command {
         } else {
           message.channel.send("no puedo hacerlo en este canal.");
         }
-      } else if (message.content.slice(13) == "random") {
+      } else if (string.slice(0, 6) == "random") {
         message.channel.send("tu link random ;D");
         message.channel.send(self.list[random].link);
       } else {

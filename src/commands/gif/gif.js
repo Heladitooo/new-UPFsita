@@ -1,3 +1,5 @@
+//4
+
 const Command = require("../command");
 const randomGif = require("./randomGif");
 const Discord = require("discord.js");

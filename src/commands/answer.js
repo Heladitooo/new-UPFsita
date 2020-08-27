@@ -1,3 +1,5 @@
+//7
+
 const Command = require("./command");
 const randomNumber = require("../random");
 
@@ -6,10 +8,10 @@ class Answer extends Command {
     super(name, description);
   }
 
-  on(message) {
+  on(message, string) {
     let random = randomNumber(0, 5);
 
-    if (message.content.slice(11).length > 0) {
+    if (string.length > 0) {
       if (random == 0) {
         message.channel.send("NO.");
       } else if (random == 1) {

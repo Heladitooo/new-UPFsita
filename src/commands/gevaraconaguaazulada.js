@@ -1,3 +1,5 @@
+//1
+
 const Command = require("./command");
 
 class Gevaraconaguaazulada extends Command {

@@ -4,6 +4,7 @@ class BadWords {
   constructor() {
     this.counterWords = 0;
     this.words = [
+      "imbécil",
       "krajo",
       "mierda",
       "estupido",
@@ -103,6 +104,8 @@ class BadWords {
         );
 
         message.delete();
+
+        return true;
       }
     }
   }

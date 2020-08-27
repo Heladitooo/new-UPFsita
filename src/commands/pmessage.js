@@ -1,3 +1,5 @@
+//9
+
 const Command = require("./command");
 const Discord = require("discord.js");
 const gmu = require("../getMentionsUsers");

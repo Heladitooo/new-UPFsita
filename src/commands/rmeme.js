@@ -1,3 +1,5 @@
+//10
+
 const Command = require("./command");
 const Discord = require("discord.js");
 const chooseColor = require("../chooseColor");
@@ -55,9 +57,9 @@ class Rmeme extends Command {
     );
   }
 
-  async on(message, client) {
-    if (message.content.slice(10).length > 0) {
-      if (message.content.slice(10, 15) != "/save") {
+  async on(message, string) {
+    if (string.length > 0) {
+      if (string.slice(0, 5) != "/save") {
         let userMention = gmu(message);
         let xuser = userMention[0];
 
@@ -77,7 +79,7 @@ class Rmeme extends Command {
 
             ctx.lineWidth = 2;
 
-            await CanvasTextWrapper(canvas, message.content.slice(10), {
+            await CanvasTextWrapper(canvas, string, {
               strokeText: true,
               font: `90px Righteous-Regular`,
               textAlign: "center",
