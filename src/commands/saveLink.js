@@ -11,7 +11,7 @@ class SaveLink extends Command {
     this.file = "./src/saveLink/saveLink.json";
     this.channelID = "743289894721552445";
     this.admiID = "699392792346230785";
-    this.epicID = "718130983378878557";
+    this.epicID = "748963596377129101";
 
     fs.readFile(this.file, "utf8", (err, data) => {
       if (err) {
@@ -188,7 +188,7 @@ class SaveLink extends Command {
           channel.send(self.list[self.list.length - 1].link);
         }
       } else {
-        message.channel.send("no eres admi 7-7 ni MEGA SUPER EPIC MEMBER.");
+        message.channel.send("no eres admi 7-7 ni moderador.");
       }
     }
   }

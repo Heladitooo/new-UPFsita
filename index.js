@@ -31,8 +31,23 @@ client.on("ready", () => {
   });
 });
 
+let thursdayConfirmation = false;
+
 client.on("message", (message) => {
   let verification = badWords.findWord(message);
+
+  let dateDay = new Date().getDay();
+
+  if (dateDay == 4) {
+    if (thursdayConfirmation == false) {
+      message.channel.send(`Feliz jueves <@${message.author.id}> nwn`, {
+        files: ["./src/img/thursday/felizJueves.mp4"],
+      });
+      thursdayConfirmation = true;
+    }
+  } else {
+    thursdayConfirmation = false;
+  }
 
   if (verification != true) {
     if (commads.particion(message, client)) {

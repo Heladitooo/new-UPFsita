@@ -33,10 +33,10 @@ class Commands {
       new Help("help", "te doy la lista de comandos upf!help"),
       new Gif(
         "comandos gif: ",
-        "usa Gifs nwn  upf!kiss, upf!bye, upf!dance, upf!happy, upf!sad, upf!kill, upf!hug, upf!elcomandonoexiste, upf!sleep, upf!hi, upf!angry, upf!confused, upf!revive, upf!cry"
+        "usa Gifs nwn  upf!kiss, upf!bye, upf!sorry, upf!dance, upf!happy, upf!sad, upf!kill, upf!hug, upf!elcomandonoexiste, upf!sleep, upf!hi, upf!angry, upf!confused, upf!revive, upf!cry"
       ),
       new ThanksYou("thanksYou", ":D"),
-      new Love("love", "posibilidades de amor pib@ 7w7 upf!love"),
+      new Love("love", "posibilidades de amor piba o pibe 7w7 upf!love"),
       new Answer("answer", "te respondo si o no a tu duda :D"),
       new SaveLink(
         "saveLink",
@@ -56,7 +56,7 @@ class Commands {
   }
 
   particion(message) {
-    if (message.content.slice(0, 4) == this.command.init) {
+    if (message.content.toLowerCase().slice(0, 4) == this.command.init) {
       return true;
     }
   }
@@ -75,7 +75,7 @@ class Commands {
         message.channel.send("me quemo, porfavor espera 2 minutos...");
       }
 
-      let posibleCommand = message.content.slice(4).match(/\w+/);
+      let posibleCommand = message.content.toLowerCase().slice(4).match(/\w+/);
       let commandFind = false;
       for (let i = 0; i < this.command.list.length; i++) {
         try {
@@ -124,7 +124,7 @@ class Commands {
             break;
           case this.command.list[8].name:
             //pmessage
-            this.command.list[8].on(message, commandFindString, client);
+            this.command.list[8].on(message, client);
             break;
           case this.command.list[9].name:
             //rmeme
@@ -153,7 +153,8 @@ class Commands {
           posibleCommand == "dance" ||
           posibleCommand == "confused" ||
           posibleCommand == "revive" ||
-          posibleCommand == "cry"
+          posibleCommand == "cry" ||
+          posibleCommand == "sorry"
         ) {
           this.command.list[3].on(message, posibleCommand);
         } else {

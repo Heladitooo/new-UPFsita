@@ -18,7 +18,6 @@ class BadWords {
       "estupido",
       "puta",
       "puto",
-      "perra",
       "recontrachanfles",
       "zorra",
       "fuck",

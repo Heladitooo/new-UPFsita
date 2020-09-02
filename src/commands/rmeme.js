@@ -124,7 +124,7 @@ class Rmeme extends Command {
 
             message.channel.send("Guardado :D. ");
           } else {
-            message.channel.send("no eres admi 7-7 ni MEGA SUPER EPIC MEMBER.");
+            message.channel.send("no eres admi 7-7 ni moderador.");
           }
         }
       }

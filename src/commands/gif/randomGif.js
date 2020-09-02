@@ -249,6 +249,15 @@ function randomGif(categorie, user, user2) {
       "https://media1.tenor.com/images/738829fcb07c26490e4e76d3833644be/tenor.gif",
       "https://media.tenor.com/images/7cba9943d6449423bd9da78929bf6337/tenor.gif",
     ],
+    sorry: [
+      "https://media1.tenor.com/images/ae680d3737176e42a8d968cf14b8c2bc/tenor.gif",
+      "https://media1.tenor.com/images/f31f825f30dd3843d7f222551a100604/tenor.gif",
+      "https://media1.tenor.com/images/a272c1ca7fb9af0b928b99809dbbbfb3/tenor.gif",
+      "https://media1.tenor.com/images/6c90cc3efcaa8e96736f55e459e2d3c1/tenor.gif",
+      "https://media1.tenor.com/images/2c9ec222fb909caad79735a4a2c1520e/tenor.gif",
+      "https://media1.tenor.com/images/3a49f021bb6b76f64d64a57d17ae11d1/tenor.gif",
+      "https://media1.tenor.com/images/60d8f7b494f7275f74550f0ebf2339fc/tenor.gif",
+    ],
   };
 
   if (categorie == "kiss") {
@@ -390,6 +399,17 @@ function randomGif(categorie, user, user2) {
       doesWork: {
         showGif: true,
         alone: user + " llora QnQ",
+      },
+    };
+  }
+
+  if (categorie == "sorry") {
+    return {
+      gif: gifList.sorry[random(0, gifList.sorry.length - 1)],
+      works: user + " se disculpa con " + user2 + " QnQ",
+      doesWork: {
+        showGif: true,
+        alone: user + " se disculpa QnQ",
       },
     };
   }
