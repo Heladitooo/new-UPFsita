@@ -5,11 +5,13 @@ let Gif = require("./commands/gif/gif");
 let ThanksYou = require("./commands/thanksYou");
 let Love = require("./commands/love");
 let Answer = require("./commands/answer");
-let SaveLink = require("./commands/saveLink");
+let SaveLink = require("./commands/saveLink/saveLink");
 let Pmessage = require("./commands/pmessage");
-let Rmeme = require("./commands/rmeme");
+let Rmeme = require("./commands/rmeme/rmeme");
 let Status = require("./commands/status");
 let Choose = require("./commands/choose");
+let Murder = require("./commands/murder/murder");
+let Art = require("./commands/art/art");
 
 class Commands {
   constructor() {
@@ -35,11 +37,11 @@ class Commands {
         "comandos gif: ",
         "usa Gifs nwn  upf!kiss, upf!bye, upf!sorry, upf!dance, upf!happy, upf!sad, upf!kill, upf!hug, upf!elcomandonoexiste, upf!sleep, upf!hi, upf!angry, upf!confused, upf!revive, upf!cry"
       ),
-      new ThanksYou("thanksYou", ":D"),
+      new ThanksYou("thanksyou", ":D"),
       new Love("love", "posibilidades de amor piba o pibe 7w7 upf!love"),
       new Answer("answer", "te respondo si o no a tu duda :D"),
       new SaveLink(
-        "saveLink",
+        "savelink",
         "upf!saveLink LINK  guarda un link, upf!saveLink delete NUMBER borra un comando , upf!saveLink update recarga,  upf!saveLink random  da un link random ^^"
       ),
       new Pmessage(
@@ -52,6 +54,11 @@ class Commands {
         "choose",
         "elijo entre las opciones que me das: / opción 1 / opción 2"
       ),
+      new Murder(
+        "murder",
+        "juego donde uno de los jugadores es un asesino. upf!murder start"
+      ),
+      new Art("art", "fan art ^^  upf!art"),
     ];
   }
 
@@ -62,18 +69,18 @@ class Commands {
   }
 
   async findCommand(message, client) {
-    setInterval(() => {
-      this.responseLimit.loop = 0;
-      this.responseLimit.limit = false;
-    }, 120000);
+    //setInterval(() => {
+     // this.responseLimit.loop = 0;
+     // this.responseLimit.limit = false;
+    //}, 120000);
 
-    if (this.responseLimit.limit != true) {
-      await this.responseLimit.loop++;
+   // if (this.responseLimit.limit != true) {
+     // await this.responseLimit.loop++;
 
-      if (this.responseLimit.loop >= 5) {
-        this.responseLimit.limit = true;
-        message.channel.send("me quemo, porfavor espera 2 minutos...");
-      }
+      //if (this.responseLimit.loop >= 5) {
+        //this.responseLimit.limit = true;
+        //message.channel.send("me quemo, porfavor espera 2 minutos...");
+     // }
 
       let posibleCommand = message.content.toLowerCase().slice(4).match(/\w+/);
       let commandFind = false;
@@ -138,6 +145,14 @@ class Commands {
             //status
             this.command.list[11].on(message);
             break;
+          case this.command.list[12].name:
+            //murder
+            this.command.list[12].on(message, commandFindString, client);
+            break;
+          case this.command.list[13].name:
+            //murder
+            this.command.list[13].on(message);
+            break;
         }
       } else {
         if (
@@ -163,10 +178,10 @@ class Commands {
           );
         }
       }
-    } else {
-      message.delete();
-      message.channel.send("espera 2 minutos...");
-    }
+    //} //else {
+      //message.delete();
+      //message.channel.send("espera 2 minutos...");
+    //}
   }
 }
 

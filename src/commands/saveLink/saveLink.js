@@ -1,14 +1,14 @@
 //8
 
-const Command = require("./command");
+const Command = require("../command");
 const fs = require("fs");
-const randomNumber = require("../random");
+const randomNumber = require("../../random");
 
 class SaveLink extends Command {
   constructor(name, description) {
     super(name, description);
 
-    this.file = "./src/saveLink/saveLink.json";
+    this.file = "./src/commands/saveLink/saveLink.json";
     this.channelID = "743289894721552445";
     this.admiID = "699392792346230785";
     this.epicID = "748963596377129101";

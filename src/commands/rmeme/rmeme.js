@@ -1,11 +1,11 @@
 //10
 
-const Command = require("./command");
+const Command = require("../command");
 const Discord = require("discord.js");
-const chooseColor = require("../chooseColor");
+const chooseColor = require("../../chooseColor");
 const Canvas = require("canvas");
-const randomNumber = require("../random");
-const gmu = require("../getMentionsUsers");
+const randomNumber = require("../../random");
+const gmu = require("../../getMentionsUsers");
 const fs = require("fs");
 
 const { registerFont } = require("canvas");
@@ -18,7 +18,7 @@ class Rmeme extends Command {
   constructor(name, description) {
     super(name, description);
 
-    this.file = "./src/rmeme/rmeme.json";
+    this.file = "./src/commands/rmeme/rmeme.json";
     this.admiID = "699392792346230785";
     this.epicID = "718130983378878557";
 

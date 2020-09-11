@@ -1,5 +1,4 @@
 //upf-warning
-//upf-sorry
 //upf userList
 
 require("dotenv").config();
@@ -29,11 +28,13 @@ client.on("ready", () => {
       type: "PLAYING",
     },
   });
+
 });
 
 let thursdayConfirmation = false;
 
 client.on("message", (message) => {
+  
   let verification = badWords.findWord(message);
 
   let dateDay = new Date().getDay();
