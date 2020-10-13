@@ -10,6 +10,7 @@ class Art extends Command {
       "./src/commands/art/src/UPFsita2.JPG",
       "./src/commands/art/src/logo.png",
       "./src/commands/art/src/logoxd.jpg",
+      "./src/commands/art/src/UPFsita3.png",
     ];
   }
 

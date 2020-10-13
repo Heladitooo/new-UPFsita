@@ -150,13 +150,20 @@ class Murder extends Command {
           if (this.config.players.length >= 4) {
             start(message, this.config, client, this.defaultState);
           } else {
+            this.config.principalMsg.msg.reactions.removeAll();
+            this.config.principalMsg.msg.edit(
+              new Discord.MessageEmbed()
+                .setColor("#000000")
+                .setTitle(
+                  "No hay suficientes jugadores(4) UnU, el juego no podrá iniciar..."
+                )
+            );
             message.channel.send(
-              "No hay suficientes jugadores(4) UnU, el juego no podrá iniciar vuelvan a entrar..."
+              "No hay suficientes jugadores(4) UnU, el juego no podrá iniciar, creen otra partida..."
             );
             this.defaultState(this.config);
           }
-        }, "30000");
-        //30 segundos
+        }, "120000");
       } else {
         if (this.config.start == false) {
           message.channel.send(

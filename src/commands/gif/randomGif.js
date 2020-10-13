@@ -184,7 +184,6 @@ function randomGif(categorie, user, user2) {
       "https://media.discordapp.net/attachments/270670070248636417/722144588264898641/image0-1-1.gif",
       "https://media1.tenor.com/images/b503b4f6389fc18bc58ea1d4c98aca7c/tenor.gif",
       "https://media.discordapp.net/attachments/270670070248636417/732781417976823849/image0.gif",
-      "https://media1.tenor.com/images/603297e43546f61fe87e6f9095f8382a/tenor.gif",
       "https://media1.tenor.com/images/e6a032ab0c391d1f14cd6768775ab46a/tenor.gif",
       "https://media.discordapp.net/attachments/690564212891582518/733094747857616957/sans_estudiando_xd_1.gif",
       "https://media1.tenor.com/images/9c4f39ada9d7dc5d4c3216f1c4d2c068/tenor.gif",
@@ -329,7 +328,7 @@ function randomGif(categorie, user, user2) {
   if (categorie == "angry") {
     return {
       gif: gifList.angry[random(0, gifList.angry.length - 1)],
-      works: user + " se enoja con " + user2 + ">:c",
+      works: user + " se enoja con " + user2 + " >:c",
       doesWork: {
         showGif: true,
         alone: user + " se enoja  !.!",

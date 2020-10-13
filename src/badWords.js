@@ -3,16 +3,26 @@ const fs = require("fs");
 class BadWords {
   constructor() {
     this.counterWords = 0;
+
+    this.change = {
+      á: "a",
+      é: "e",
+      3: "e",
+      í: "i",
+      1: "i",
+      0: "o",
+      ö: "o",
+      ò: "o",
+      ú: "u",
+    };
     this.words = [
-      "imbécil",
+      "imbecil",
       "krajo",
       "mierda",
       "estupido",
       "carajo",
       "pichurria",
-      "Putö",
       "Subnormal",
-      "Putò",
       "pendejo",
       "بزرگترین توهین",
       "estupido",
@@ -29,46 +39,44 @@ class BadWords {
       "jodete",
       "mierdita",
       "mierdota",
-      "imbecil",
       "imbeciles",
       "caraculo ",
       "idiota",
       "idiotas",
-      "caraculo",
       "joputas",
       "gonorrea",
       "reputisima",
-      "re putisima",
+      "putisima",
       "putas",
       "putos",
-      "re mil puta",
       "coño",
       "putita",
       "putito",
       "inutil",
       "verga",
-      "chupa pija",
       "puteadas",
-      "culo roto",
-      "aborto fallido",
       "maldito",
       "maldita",
       "aborto",
       "culoroto",
-      "concha de tu madre",
       "pvto",
-      "m1erda",
+      "mierda",
       "shit",
     ];
   }
 
   findWord(message) {
     let data = false;
-    let regexMessage = message.content.match(/\w+/g);
+
+    let regexMessage = message.content.match(/[[\wáéíöòú]+/g);
     if (regexMessage != undefined) {
       for (let i = 0; i < regexMessage.length; i++) {
         for (let j = 0; j < this.words.length; j++) {
-          if (regexMessage[i].toLowerCase() == this.words[j]) {
+          if (
+            regexMessage[i]
+              .toLowerCase()
+              .replace(/[\dáéíöòú]/g, (m) => this.change[m]) == this.words[j]
+          ) {
             data = true;
             break;
           }

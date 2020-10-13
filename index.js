@@ -17,6 +17,10 @@ const commads = new Commads();
 const Welcome = require("./src/welcome");
 const welcome = new Welcome();
 
+const chat = require("./src/chat");
+
+let thursdayConfirmation = false;
+
 client.on("ready", () => {
   console.log("Hello word! " + git.tag());
   commads.init();
@@ -28,31 +32,31 @@ client.on("ready", () => {
       type: "PLAYING",
     },
   });
-
 });
 
-let thursdayConfirmation = false;
-
 client.on("message", (message) => {
-  
   let verification = badWords.findWord(message);
-
-  let dateDay = new Date().getDay();
-
-  if (dateDay == 4) {
-    if (thursdayConfirmation == false) {
-      message.channel.send(`Feliz jueves <@${message.author.id}> nwn`, {
-        files: ["./src/img/thursday/felizJueves.mp4"],
-      });
-      thursdayConfirmation = true;
-    }
-  } else {
-    thursdayConfirmation = false;
-  }
 
   if (verification != true) {
     if (commads.particion(message, client)) {
       commads.findCommand(message, client);
+    }
+
+    let dateDay = new Date().getDay();
+
+    if (dateDay == 4) {
+      if (thursdayConfirmation == false) {
+        message.channel.send(`Feliz jueves <@${message.author.id}> nwn`, {
+          files: ["./src/img/thursday/felizJueves.mp4"],
+        });
+        thursdayConfirmation = true;
+      }
+    } else {
+      thursdayConfirmation = false;
+    }
+
+    if (message.content.startsWith(`<@!${process.env.ID}>`)) {
+      chat(message);
     }
   }
 });
