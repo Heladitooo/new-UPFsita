@@ -93,23 +93,6 @@ class BadWords {
             ". **usa buen vocabulario 7-7, tu mensaje fue borrado.**"
         );
 
-        fs.appendFile(
-          "./src/badWords/badWords.txt",
-          `${message.author.username}: ${message.content}   ${
-            message.channel.name
-          }  ${new Date()} \n\n`,
-          function (err) {
-            if (err) {
-              return console.log(err);
-            }
-            console.log(
-              `${message.author.username}: ${message.content}   ${
-                message.channel.name
-              }  ${new Date()} \n\n`
-            );
-          }
-        );
-
         message.delete();
 
         return true;

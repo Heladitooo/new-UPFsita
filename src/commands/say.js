@@ -15,7 +15,7 @@ class Say extends Command {
       messageToPrint.length > 0 &&
       message.author.id != process.env.ID
     ) {
-      message.channel.send(messageToPrint);
+      message.channel.send("- " + messageToPrint);
       message.delete();
     } else {
       message.channel.send(

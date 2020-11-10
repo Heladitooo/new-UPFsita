@@ -11,11 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vitalets/google-translate-api": "^4.0.0",
     "canvas": "^2.6.1",
     "canvas-text-wrapper": "^0.10.2",
     "cleverbot-free": "^1.0.4",
     "discord": "^0.8.2",
-    "discord.js": "^12.2.0",
+    "discord.js": "^12.4.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "giphy-api": "^2.0.1",
@@ -23,6 +24,7 @@
     "git-rev-sync": "^2.0.0",
     "nodemon": "^2.0.4",
     "ping-monitor": "^0.5.0",
-    "pm2": "^4.4.1"
+    "pm2": "^4.4.1",
+    "shelljs": "^0.8.4"
   }
 }

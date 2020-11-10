@@ -175,6 +175,7 @@ function randomGif(categorie, user, user2) {
       "https://media1.tenor.com/images/51c5c144c04874dc2e071b966b2dda6c/tenor.gif",
     ],
     dance: [
+      "https://media1.tenor.com/images/7c9e0c1fd6da0d88eae5260be7eef372/tenor.gif",
       "https://media.discordapp.net/attachments/731513614556463216/743896180869693560/20200219_132511-1.gif",
       "https://media.discordapp.net/attachments/301161155831922688/733111096004575292/Fernan_capo.gif",
       "https://media1.tenor.com/images/fbf9160aaf0140037000f926737f4746/tenor.gif",

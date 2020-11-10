@@ -20,7 +20,7 @@ class Rmeme extends Command {
 
     this.file = "./src/commands/rmeme/rmeme.json";
     this.admiID = "699392792346230785";
-    this.epicID = "718130983378878557";
+    this.epicID = "748963596377129101";
 
     fs.readFile(this.file, "utf8", (err, data) => {
       if (err) {
