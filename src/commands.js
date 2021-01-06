@@ -12,6 +12,9 @@ let Status = require("./commands/status");
 let Choose = require("./commands/choose");
 let Murder = require("./commands/murder/murder");
 let Art = require("./commands/art/art");
+let Gift = require("./commands/gift");
+let Verdad = require("./commands/verdadOReto/verdad");
+let Reto = require("./commands/verdadOReto/reto");
 
 class Commands {
   constructor() {
@@ -59,6 +62,9 @@ class Commands {
         "juego donde uno de los jugadores es un asesino. upf!murder start"
       ),
       new Art("art", "fan art ^^  upf!art"),
+      //new Gift("gift", "regalooo"),
+      new Verdad("verdad", "de verdad o reto, te dara una pregunta para que contestes"),
+      new Reto("reto", "te dara un reto, compartelo 7w7"),
     ];
   }
 
@@ -150,8 +156,13 @@ class Commands {
             this.command.list[12].on(message, commandFindString, client);
             break;
           case this.command.list[13].name:
-            //murder
             this.command.list[13].on(message);
+            break;
+            case this.command.list[14].name:
+            this.command.list[14].on(message);
+            break;
+            case this.command.list[15].name:
+            this.command.list[15].on(message);
             break;
         }
       } else {

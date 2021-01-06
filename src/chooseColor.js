@@ -1,9 +1,9 @@
 function chooseColor() {
   let random = Math.floor(Math.random() * 2);
   if (random == 1) {
-    return "#00719e";
+    return "#0099cc";
   } else {
-    return "#ec9f00";
+    return "#ff9900";
   }
 }
 
